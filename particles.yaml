@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -54,3 +53,19 @@ spec:
           requests:
             cpu: 50m
             memory: 64Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: particles-demo
+spec:
+  # This defines which pods are represented by this service.
+  # The service becomes a network endpoint for other services or exernal users.
+  selector: 
+    app: particles
+    
+  ports:
+    - name: http
+      port: 80
+  type: LoadBalancer
