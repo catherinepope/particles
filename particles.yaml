@@ -5,18 +5,18 @@ metadata:
   namespace: production
   labels:
     app: particles
-    version: 1.0.0
+    version: 1.0.1
 spec:
   selector:
     matchLabels:
       app: particles
-      version: 1.0.0
+      version: 1.0.1
   replicas: 2
   template:
     metadata:
       labels:
         app: particles
-        version: 1.0.0
+        version: 1.0.1
     spec:
       containers:
       - name: particles
